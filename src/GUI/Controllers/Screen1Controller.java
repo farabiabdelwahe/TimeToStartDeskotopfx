@@ -766,7 +766,6 @@ dialog.showAndWait();}
                 app_stage.hide(); 
                 app_stage.setScene(home_page_scene);
                 app_stage.show(); 
-<<<<<<< HEAD
 //    }
 //    else
 //        
@@ -823,59 +822,6 @@ dialog.showAndWait();}
 ////        Facebookuser.fbusav=savedusers.savedlogedin;
 ////    }
 //    }
-=======
-    }
-    else
-        
-      
-   
-       
-   if (userfb.getId()==0)
-   {  System.out.println(userfb.getId());
-   System.out.println(userfb.getNom());
-   System.out.println("user 3adi");
-   userfb.setUsername(usernameed.getText());
-     userfb.setPrenom(firstnameed.getText());
-    userfb.setNom(lastnameed.getText());
-   
-    userfb.setPassword(passworded.getText());
-   
-
-    
-    userfb.setCountry(countryed.getText());
-      userfb.setQualification(qualificationed.getText());
-     
-   
-    userfb.setEmail(emailed.getText());
-        
-    
-   
-  ud.updateComptemodif(userfb);
-  Facebookuser.fbusav=savedusers.savedlogedin;
-   savedusers.savedlogedin=userfb;
-   
-       Parent home_page_parent = FXMLLoader.load(getClass().getResource("/GUI/Main.fxml"));
-        Scene home_page_scene = new Scene(home_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.hide(); 
-                app_stage.setScene(home_page_scene);
-                app_stage.show(); }
-    else if (userfb.getId()!=0)
-        
-    { 
-        userfb.setPrenom(firstnameed.getText());
-    userfb.setNom(lastnameed.getText());
-    userfb.setPassword(passworded.getText());
-   
-
-    
-    userfb.setCountry(countryed.getText());
-      userfb.setQualification(qualificationed.getText());
-     
-   
-    userfb.setEmail(emailed.getText());
-        
->>>>>>> origin/master
     
     }
     
@@ -983,20 +929,12 @@ tableid.getItems().setAll(fe.findAllbyuser(usernamef.getText()));
            System.out.println("bel fbuserfbu"+u.getFbid());
         
          if (us!=null){
-<<<<<<< HEAD
          System.out.println("existe toul");
       
          savedusers.savedlogedin=us;
              System.out.println("tsajel hal maset -----?");
              System.out.println(savedusers.savedlogedin.getLastname());
              System.out.println(savedusers.savedlogedin.getLastname());
-=======
-      
-         savedusers.savedlogedin=Facebookuser.fbu;
-         
-             System.out.println(savedusers.savedlogedin.getNom());
-             System.out.println(savedusers.savedlogedin.getNom());
->>>>>>> origin/master
               System.out.println(Facebookuser.fbu.getFbid());
 //              urez=fe.fbusers(u.getLastname(),u.getFbid());
 //     Facebookuser.fbusav=urez;
@@ -1013,20 +951,12 @@ tableid.getItems().setAll(fe.findAllbyuser(usernamef.getText()));
    
          
  
-<<<<<<< HEAD
            System.out.println(" mana3erfouch famchy inserer");
 //      savedusers.savedlogedin=u;
       fe.CreerCompte(naw);
        savedusers.savedlogedin=naw;
        try {
       Parent home_page_parent = FXMLLoader.load(getClass().getResource("/GUI/Screen3.fxml"));
-=======
-         
-     urez=fe.fbusers(u.getNom(),u.getFbid());
-     Facebookuser.fbusav=urez;
-     savedusers.savedlogedin=Facebookuser.fbu;
-      Parent home_page_parent = FXMLLoader.load(getClass().getResource("/GUI/Main.fxml"));
->>>>>>> origin/master
         Scene home_page_scene = new Scene(home_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 app_stage.hide(); 
