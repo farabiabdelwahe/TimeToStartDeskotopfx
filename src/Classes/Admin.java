@@ -12,7 +12,7 @@ package Classes;
 public class Admin {
 
         private String id ;
-   private String password ;
+  // private String password ;
    private String name ;
    
     public String getId() {
@@ -36,6 +36,10 @@ public class Admin {
     }
 
     public void setName(String name) {
+        this.name = name;
+    }
+
+   public void setName1(String name) {
         this.name = name;
     }
 
