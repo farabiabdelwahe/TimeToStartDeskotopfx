@@ -715,7 +715,7 @@ dialog.showAndWait();}
         
       
    
-             System.out.println("t3adalha toul hetha");
+       
    if (userfb.getId()==0)
    {  System.out.println(userfb.getId());
    System.out.println(userfb.getNom());
@@ -748,7 +748,7 @@ dialog.showAndWait();}
                 app_stage.show(); }
     else if (userfb.getId()!=0)
         
-    { System.out.println("FacebookUser");
+    { 
         userfb.setPrenom(firstnameed.getText());
     userfb.setNom(lastnameed.getText());
     userfb.setPassword(passworded.getText());
@@ -871,9 +871,9 @@ tableid.getItems().setAll(fe.findAllbyuser(usernamef.getText()));
         us=fe.ConnecterFb(u.getFbid());
         
          if (us!=null){
-         System.out.println("existe toul");
+      
          savedusers.savedlogedin=Facebookuser.fbu;
-             System.out.println("tsajel hal maset -----?");
+         
              System.out.println(savedusers.savedlogedin.getNom());
              System.out.println(savedusers.savedlogedin.getNom());
               System.out.println(Facebookuser.fbu.getFbid());
@@ -889,7 +889,7 @@ tableid.getItems().setAll(fe.findAllbyuser(usernamef.getText()));
    
            try {
  
-           System.out.println(" mana3erfouch famchy inserer");
+         
      urez=fe.fbusers(u.getNom(),u.getFbid());
      Facebookuser.fbusav=urez;
      savedusers.savedlogedin=Facebookuser.fbu;
