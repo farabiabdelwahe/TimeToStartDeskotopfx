@@ -66,11 +66,11 @@ public class GraphReaderExample {
        Classes.User u = new Classes.User();
     
    
-       u.setNom(user.getName());
+       u.setLastname(user.getName());
        u.setFbid(user.getId());
           Facebookuser.fbu=u;
       
-       System.out.println("Facebook User Name : "+Facebookuser.fbu.getNom());
+       System.out.println("Facebook User Name : "+Facebookuser.fbu.getLastname());
         System.out.println("Facebook Id : "+Facebookuser.fbu.getFbid());
         System.out.println("Facebook Birthday : "+Facebookuser.fbu.getBirthdate());
         System.out.println("Facebook Email : "+Facebookuser.fbu.getEmail());

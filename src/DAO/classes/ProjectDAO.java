@@ -373,15 +373,13 @@ public Map<String,Integer> calculatecat(){
         
     }
 }
-  public void  update(Projet p){
+  public void  update(Projet p) throws SQLException{
             connection = DataSource.getInstance().getConnection();
         
 
 
  
-        try 
-            
-        {
+        
             String req ="update project  set name=?, description=? ,type=? where idproject=? ";
                
            
@@ -396,13 +394,8 @@ public Map<String,Integer> calculatecat(){
             
               
             ps.executeUpdate();
-        } 
-        catch (SQLException ex)
-        {
-            Logger.getLogger(Sujet.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage());
-       
-        }
+        
+    
   }
   
   

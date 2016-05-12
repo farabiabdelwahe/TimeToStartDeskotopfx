@@ -287,7 +287,7 @@ public class FXMLDocumentController implements Initializable,Runnable {
         
     
            @FXML
-        private void loaduser(javafx.scene.input.MouseEvent g) throws IOException {
+        private void loaduser(javafx.scene.input.MouseEvent a)  { 
    try {                    
         URL url = getClass().getResource("Main.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -302,7 +302,11 @@ public class FXMLDocumentController implements Initializable,Runnable {
     catch (IOException e) {
         e.printStackTrace();
     }
-        }
+                
+            
+       
+    }
+        
         @FXML
              private void logout(javafx.scene.input.MouseEvent g) throws IOException {
    try {                    
@@ -592,36 +596,50 @@ helpType.getSelectionModel().selectedItemProperty().addListener(new ChangeListen
 
 @FXML protected void deletep() {
 ObservableList selectedItems = projetTable.getSelectionModel().getSelectedItems();
-   
-      for (Object o1: selectedItems){
-          System.out.println(((Projet)(o1)).toString());
-           Projet p1=(Projet)(o1);
+   Alert alert = new Alert(AlertType.CONFIRMATION);
+alert.setTitle("Confirmation Dialog");
+alert.setHeaderText("Look, a Confirmation Dialog");
+alert.setContentText("delete?");
+
+Optional<ButtonType> result = alert.showAndWait();
+
            
-        o.SupprimeProjet(p1);
+   
 
        
     
+     
+if (result.get() == ButtonType.OK){
+      for (Object o1: selectedItems){
+          System.out.println(((Projet)(o1)).toString());
+           Projet p1=(Projet)(o1);
+     o.SupprimeProjet(p1);
       }
+} else {
+    // ... user chose CANCEL or closed the dialog
+}
+    
          userp();
     } 
 
 
 
-@FXML protected void update() {
-    try{
+@FXML protected void update() throws SQLException {
+    
        ProjectDAO o = new ProjectDAO();
        Projet p = SelectedValue.p;
        p.setDiscription(edis.getText());
        p.setName(ename.getText());
+           System.out.println("zfqdfsfz"+p.getId());
        p.setType((String)ecat.getValue());
        o.update(p);
        SelectedValue.p=o.findProjectbyname(ename.getText());
-       
-    }
     
-    catch ( Exception e){
-        System.out.println(e.getMessage());
-    }
+
+       
+    
+    
+
    
  
     } 
@@ -1737,6 +1755,7 @@ icon1.setPreserveRatio(false);
        
     }
         
+        
         @FXML Label spflbl;
         @FXML Label splbl;
         
@@ -1755,8 +1774,14 @@ splbl.setText(SelectedValue.selectedsponsoring.getText());
            
             @FXML private void opentuto(javafx.scene.input.MouseEvent g) throws IOException {
 
-                  String[] toppings = new String[20];
-            tutorialvideo.main(toppings);
+                 URL url = getClass().getResource("/GUI/ArticleClient.fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(url);
+        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
+        AnchorPane page = (AnchorPane) fxmlLoader.load(url.openStream()); 
+
+        mainp.getChildren().clear();
+        mainp.getChildren().add(page);
        
     }
            

@@ -19,6 +19,7 @@ public interface IContributionDAO
     public void SupprimerContribution(Contribution c );
     public void ModifierContribution(Contribution c);
     public ObservableList<Contribution> AfficherContribution(int id);
-    public boolean testspam(String content , String owner , String sujname);
+ 
+    public int commentateur(int c);
     
 }

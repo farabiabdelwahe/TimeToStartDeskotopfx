@@ -29,12 +29,11 @@
                               <Label layoutX="54.0" layoutY="415.0" text="country" />
                               <Label layoutX="49.0" layoutY="239.0" text="password" />
                               <Label layoutX="48.0" layoutY="473.0" text="qualification" />
-                              <TextField fx:id="passworded" layoutX="139.0" layoutY="235.0" prefHeight="31.0" prefWidth="223.0" />
                               <TextField fx:id="qualificationed" layoutX="137.0" layoutY="471.0" prefHeight="31.0" prefWidth="228.0" />
                               <Pane layoutX="-26.0" layoutY="31.0" prefHeight="32.0" prefWidth="1159.0" style="-fx-background-color: #ace600;" />
-                              <Label layoutX="482.0" layoutY="6.0" text="Profile" />
                               <TextField fx:id="usernameed" layoutX="139.0" layoutY="119.0" prefHeight="31.0" prefWidth="222.0" />
                               <Label layoutX="55.0" layoutY="126.0" text="Username" />
+                              <PasswordField fx:id="passworded" layoutX="139.0" layoutY="227.0" prefHeight="31.0" prefWidth="222.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -47,7 +46,6 @@
                      <children>
                         <AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="1148.0">
                            <children>
-                              <Label layoutX="303.0" layoutY="5.0" text="User info" />
                               <Pane layoutX="-4.0" layoutY="71.0" prefHeight="560.0" prefWidth="1145.0" style="-fx-background-color: gray;">
                                  <children>
                                     <Pane layoutX="737.0" layoutY="84.0" prefHeight="220.0" prefWidth="280.0">
@@ -74,7 +72,7 @@
                                     <Button layoutX="896.0" layoutY="23.0" mnemonicParsing="false" onAction="#sendmail" prefHeight="31.0" prefWidth="108.0" text="Mail him" />
                                  </children>
                               </Pane>
-                              <Pane layoutX="-6.0" layoutY="30.0" prefHeight="32.0" prefWidth="1150.0" style="-fx-background-color: #0886A9;" />
+                              <Pane layoutX="-6.0" layoutY="30.0" prefHeight="32.0" prefWidth="1150.0" style="-fx-background-color: #ace600;" />
                            </children>
                            <stylesheets>
                               <URL value="@me.css" />

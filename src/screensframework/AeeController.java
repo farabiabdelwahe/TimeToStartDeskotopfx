@@ -11,6 +11,7 @@ import Classes.User;
 import DAO.classes.ContributionDAO;
 import DAO.classes.SujetDAO;
 import DAO.classes.UserDAO;
+import GUI.Controllers.savedusers;
 import edu.cmu.sphinx.frontend.util.Microphone;
 import edu.cmu.sphinx.linguist.Linguist;
 import edu.cmu.sphinx.recognizer.Recognizer;
@@ -147,8 +148,15 @@ public class AeeController implements Initializable {
     private TextField contentmodifforum;
     @FXML
     private Label namemodif;
+     @FXML
+    private Label conseil;
+    
     @FXML
     private Label namemodif1;
+     @FXML
+    private Label idlabelmodifforum ; 
+      @FXML
+    private Label contentlabelmodifforum ; 
         @FXML
     private Label contentmodif;
         @FXML
@@ -164,7 +172,9 @@ public class AeeController implements Initializable {
     static ConfigurationManager cm;
     @FXML
     private Button Validermodif;
-
+        @FXML
+    private Button butmodifforum;
+        
     public void myVoice() throws PropertyException, InstantiationException, MalformedURLException, IOException {
   // FirstVoice();
         URL url;
@@ -303,7 +313,9 @@ public class AeeController implements Initializable {
         passage.suj = sujetinitial;
      
 if(passage.suj.getIdsubject()!=0)
-{   //Parent home_page_parent = FXMLLoader.load(getClass().getResource("topicbycategorie.fxml"));
+{ 
+       
+
               URL url = getClass().getResource("topicbycategorie.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(url);
@@ -312,6 +324,7 @@ if(passage.suj.getIdsubject()!=0)
 
        load.getChildren().clear();
         load.getChildren().add(page);
+
         
 }
 else
@@ -330,31 +343,23 @@ else
     @FXML
     private void Creerprojet(javafx.scene.input.MouseEvent event) throws IOException {
 
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("AjoutSujet.fxml"));
-        Scene home_page_scene = new Scene(home_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide();
-        app_stage.setScene(home_page_scene);
 
-        app_stage.show();
+        URL url = getClass().getResource("AjoutSujet.fxml");
+         
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(url);
+        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
+        AnchorPane page = (AnchorPane) fxmlLoader.load(url.openStream()); 
+
+       load.getChildren().clear();
+        load.getChildren().add(page);
+      
 
     }
     
 
 
-    //retour
-    @FXML
-    private void returnmenu(javafx.scene.input.MouseEvent event) throws IOException {
-
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("aee.fxml"));
-        Scene home_page_scene = new Scene(home_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide();
-        app_stage.setScene(home_page_scene);
-
-        app_stage.show();
-
-    }
+   
 
     //CREATION NEW TOPIC
     @FXML
@@ -370,8 +375,9 @@ else
 
             } else {
 
-                User a = new User();
-              a.setId(5);
+                User a = savedusers.savedlogedin;
+                System.out.println(a.getId()+"test1");
+            
                 Calendar calendare = Calendar.getInstance();
                 java.sql.Date ourJavaDateObject = new java.sql.Date(calendare.getTime().getTime());
                 Sujet s = new Sujet();
@@ -409,7 +415,7 @@ else
         forumusercolumn.setCellValueFactory(new PropertyValueFactory<trascontribution, String>("owner"));
         forumcommentcolumn.setCellValueFactory(new PropertyValueFactory<trascontribution, String>("content"));
         forumidcolumn.setCellValueFactory(new PropertyValueFactory<trascontribution, Integer>("idcontribution"));
-
+       
         List<trascontribution> f = new ArrayList<trascontribution>();
 
         for (Contribution c : daocontribution.AfficherContribution(passage.suj.getIdsubject())) {
@@ -434,7 +440,7 @@ else
 
 //premier affichage selon les categories
     @FXML
-    private void affichercategorie(ActionEvent event) throws IOException {
+    private void affichercategorie(javafx.scene.input.MouseEvent event) throws IOException {
         namecolumn.setCellValueFactory(new PropertyValueFactory<Sujet, String>("name"));
         idcolumn.setCellValueFactory(new PropertyValueFactory<Sujet, Integer>("idsubject"));
         contentcolumn.setCellValueFactory(new PropertyValueFactory<Sujet, String>("content"));
@@ -449,6 +455,7 @@ else
     private void Edit(ActionEvent event) throws IOException {
 
         ObservableList selectedItems = typecategorie.getSelectionModel().getSelectedItems();
+        User a = savedusers.savedlogedin;
         Sujet p1 = null;
         for (Object o1 : selectedItems) {
 
@@ -457,13 +464,26 @@ else
 
         }
      
-        if (selectedItems.size()!=0) 
+        if (selectedItems.size()!=0 ) 
         {
+         
+                
+     
                modifname.setText(sujetinitial.getName());
         modifcontent.setText(sujetinitial.getContent());
 
         modifid.setText(String.valueOf(sujetinitial.getIdsubject()));
-        modifid.setVisible(true);
+        if(daosujet.returnidcr(Integer.parseInt(modifid.getText()))!= savedusers.savedlogedin.getId())
+            {
+            Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Not Your Topic");
+
+                alert.setContentText("Not Your Topic");
+                alert.showAndWait();
+
+            }
+        else
+        {     modifid.setVisible(true);
         modifname.setVisible(true);
         modifcontent.setVisible(true);
         namemodif.setVisible(true);
@@ -471,7 +491,10 @@ else
         categorimodif.setVisible(true);
         contentmodif.setVisible(true);
         modifcategorie.setVisible(true);
-        Validermodif.setVisible(true);
+        Validermodif.setVisible(true);}
+          
+         
+   
         }else
         {
              Alert alert = new Alert(AlertType.ERROR);
@@ -488,19 +511,18 @@ else
     @FXML
     private void ValiderModif(ActionEvent event) throws IOException {
 
-        User a = new User();
-        a.setId(5);
+        User a = savedusers.savedlogedin;
+     
         Calendar calendare = Calendar.getInstance();
         java.sql.Date ourJavaDateObject = new java.sql.Date(calendare.getTime().getTime());
         Sujet s = new Sujet();
-
+        
         s.setName(modifname.getText());
         s.setContent(modifcontent.getText());
         s.setCategories(modifcategorie.getValue());
         s.setDate(ourJavaDateObject);
         s.setCreateur(a);
         s.setIdsubject(Integer.parseInt(modifid.getText()));
-        //System.out.print(s.toString());
         daosujet.Modifiersujet(s);
                 modifid.setVisible(false);
         modifname.setVisible(false);
@@ -516,6 +538,7 @@ else
 
     @FXML
     private void Supprimersujet(ActionEvent event) throws IOException {
+         User a = savedusers.savedlogedin;
         ObservableList selectedItems = typecategorie.getSelectionModel().getSelectedItems();
         Sujet p1 = null;
         for (Object o1 : selectedItems) {
@@ -526,8 +549,8 @@ else
         }
         
          System.out.println(daosujet.returnidcr(sujetinitial.getIdsubject()));
-    //    System.out.println(sujetinitial.getIdsubject());
-       if(daosujet.returnidcr(sujetinitial.getIdsubject())==9)
+  
+       if(daosujet.returnidcr(sujetinitial.getIdsubject())==savedusers.savedlogedin.getId())
        {
        daosujet.Supprimersujet(sujetinitial);
                 
@@ -556,13 +579,13 @@ else
     @FXML
     private void postercom(ActionEvent event) throws IOException {
 
-        if (daocontribution.testspam(commentaire.getText(), "jj", nmtopic.getText()) == true) {
+        
             Contribution c = new Contribution();
-            User u = new User();
+            User u = savedusers.savedlogedin;
             Calendar calendare = Calendar.getInstance();
             java.sql.Date ourJavaDateObject = new java.sql.Date(calendare.getTime().getTime());
 
-            u.setId(9);
+           
             c.setContent(commentaire.getText());
             c.setDate(ourJavaDateObject);
             c.setSujet(passage.suj);
@@ -585,43 +608,19 @@ else
 
             }
             tableviewcomment.getItems().setAll(f);
-        } else {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("STOP SPAMMING");
-
-            alert.setContentText("Stop Spamming");
-            alert.showAndWait();
-        }
+         
+     
 
     }
+       @FXML
+        private AnchorPane mainp;
+   
 
-    @FXML
-    private void retourversinit(ActionEvent event) throws IOException {
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("aee.fxml"));
-        Scene home_page_scene = new Scene(home_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide();
-        app_stage.setScene(home_page_scene);
-
-        app_stage.show();
-
-    }
-
-    @FXML
-    private void Fournirhelp(javafx.scene.input.MouseEvent event) throws IOException {
-
-        Parent home_page_parent = FXMLLoader.load(getClass().getResource("FXMLhelp.fxml"));
-        Scene home_page_scene = new Scene(home_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide();
-        app_stage.setScene(home_page_scene);
-
-        app_stage.show();
-        //statistique      
-    }
+   
 
     @FXML
     private void Supprimercommentaire(ActionEvent event) throws IOException {
+        User u = savedusers.savedlogedin;
         ObservableList selectedItems = tableviewcomment.getSelectionModel().getSelectedItems();
         trascontribution p1 = null;
         Contribution ca = new Contribution();
@@ -632,8 +631,24 @@ else
             ca.setIdcontribution(p1.getIdcontribution());
 
         }
+        
+       if(daocontribution.commentateur(ca.getIdcontribution())==savedusers.savedlogedin.getId())
+       {
+            daocontribution.SupprimerContribution(ca);
+      
+       }
+        else
+        {
+            
+             Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("IMPOSSIBLE");
 
-        daocontribution.SupprimerContribution(ca);
+                alert.setContentText("Ce n'est pas votre commentaire");
+                alert.showAndWait();
+
+        }
+             
+               
         forumusercolumn.setCellValueFactory(new PropertyValueFactory<trascontribution, String>("owner"));
         forumcommentcolumn.setCellValueFactory(new PropertyValueFactory<trascontribution, String>("content"));
         forumidcolumn.setCellValueFactory(new PropertyValueFactory<trascontribution, Integer>("idcontribution"));
@@ -667,10 +682,30 @@ else
             ca.setContent(p1.getContent());
 
         }
-
-        idmodifforum.setText(String.valueOf(ca.getIdcontribution()));
+  
+       if(daocontribution.commentateur(ca.getIdcontribution())==savedusers.savedlogedin.getId())
+       {
+            idmodifforum.setText(String.valueOf(ca.getIdcontribution()));
         contentmodifforum.setText(ca.getContent());
+        contentlabelmodifforum.setVisible(true);
+        idlabelmodifforum.setVisible(true);
+        butmodifforum.setVisible(true);
+        contentmodifforum.setVisible(true);
+        idmodifforum.setVisible(true);
          tableviewcomment.setVisible(false);
+      
+       }
+        else
+        {
+            
+             Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("IMPOSSIBLE");
+
+                alert.setContentText("Ce n'est pas votre commentaire");
+                alert.showAndWait();
+
+        }
+   
 
         //statistique      
     }
@@ -706,7 +741,8 @@ else
     private void getstat(ActionEvent event) throws IOException 
     {
           
-
+catcharts.setVisible(true);
+ conseil.setVisible(true);
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
 
      Map<String,Integer> v=daosujet.calculatecat();
@@ -742,6 +778,7 @@ else
         
     }
     @FXML AnchorPane load ;
+    @FXML AnchorPane interf ;
     
     
     

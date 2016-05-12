@@ -78,24 +78,7 @@ public class ContributionDAO implements IContributionDAO{
             Logger.getLogger(Contribution.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    @Override
-    public boolean testspam(String content , String owner, String sujname)
-    {
-         String sql = "select count(*)  as exist      from contribution ,subject,user where contribution.iduser=user.iduser and  contribution.idsubject=subject.idsubject and  contribution.content='"+content+"' and subject.name='"+sujname+"' and user.USERname='"+owner+"'";
-         try {
-             ResultSet rs =connection.createStatement().executeQuery(sql);
-             rs.next();
-             System.out.println(rs.getInt("exist"));
-             
-             return rs.getInt("exist")==0 ;
-         
-         } catch (SQLException ex) {
-             Logger.getLogger(ContributionDAO.class.getName()).log(Level.SEVERE, null, ex);
-             System.out.println(ex.getMessage());
-             return false ; 
-         }
 
-    }
 
     @Override
     public ObservableList<Contribution> AfficherContribution(int id )
@@ -107,7 +90,7 @@ public class ContributionDAO implements IContributionDAO{
         try {
             
         
-            String sql = "select contribution.* ,user.username as owner      from contribution ,user where contribution.iduser=user.iduser and  contribution.idsubject='"+id+"'";
+            String sql = "select contribution.* ,fos_user.username as owner      from contribution ,fos_user where contribution.iduser=fos_user.id and  contribution.idsubject='"+id+"'";
             ResultSet rs =connection.createStatement().executeQuery(sql);
             while (rs.next())
             {   Contribution cont = new Contribution();
@@ -131,6 +114,29 @@ public class ContributionDAO implements IContributionDAO{
             }
         return listData;
         
+    }
+
+
+    @Override
+    public int commentateur(int c)
+    {
+      
+              System.out.println("dkhalt");
+              int x=-1;
+
+    try {
+        System.out.println("dkhalt l try ");
+            String sql = "select iduser from contribution where idcontribution='"+c+"'";
+            ResultSet rs =connection.createStatement().executeQuery(sql);
+            rs.next();
+     x=rs.getInt("iduser");
+    
+        } catch (Exception ex) {
+            System.out.println("me dkhaltch l try ");
+            Logger.getLogger(Sujet.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+    return x ; 
     }
     
 }

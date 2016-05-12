@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="751.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ArticleController">
+    <stylesheets>
+        <URL value="@article.css" />
+    </stylesheets>
+   <children>
+      <TabPane layoutX="-2.0" layoutY="6.0" prefHeight="600.0" prefWidth="735.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Ajouter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="label" layoutX="520.0" layoutY="154.0" prefHeight="17.0" prefWidth="233.0" />
+                        <TextField fx:id="type" layoutX="232.0" layoutY="98.0" />
+                        <Button fx:id="addFile" layoutX="261.0" layoutY="355.0" mnemonicParsing="false" onAction="#click" text="Ajouter fichier" />
+                        <TextField fx:id="author" layoutX="232.0" layoutY="221.0" />
+                        <Button fx:id="save" layoutX="569.0" layoutY="458.0" mnemonicParsing="false" onAction="#save" text="Save" />
+                        <Label fx:id="errorMessage" layoutX="520.0" layoutY="238.0" prefHeight="17.0" prefWidth="149.0" />
+                        <Label layoutX="131.0" layoutY="102.0" text="Type" />
+                        <Label layoutX="131.0" layoutY="225.0" text="Author" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Other">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="359.0" layoutY="28.0" prefHeight="17.0" prefWidth="115.0" text="Recherche author" />
+                        <Label layoutX="28.0" layoutY="28.0" text="Recherche type" />
+                        <TextField fx:id="searchType" layoutX="158.0" layoutY="20.0" prefHeight="31.0" prefWidth="196.0" />
+                        <TextField fx:id="searchAuthor" layoutX="474.0" layoutY="21.0" prefHeight="31.0" prefWidth="128.0" />
+                        <Button fx:id="printTableViewBtn" layoutX="324.0" layoutY="310.0" mnemonicParsing="false" onAction="#print" prefHeight="36.0" prefWidth="143.0" text="Imprimer" />
+                        <Button fx:id="searchBtn" layoutX="610.0" layoutY="19.0" mnemonicParsing="false" onAction="#search" prefHeight="51.0" prefWidth="127.0" text="Search" />
+                        <TableView fx:id="tabArticle" layoutX="88.0" layoutY="89.0" onMouseClicked="#viewDetail" prefHeight="200.0" prefWidth="600.0">
+                           <columns>
+                              <TableColumn fx:id="id" prefWidth="57.0" text="Id" />
+                              <TableColumn fx:id="date" minWidth="0.0" prefWidth="122.0" text="Date" />
+                              <TableColumn fx:id="type1" minWidth="0.0" prefWidth="102.0" text="Type" />
+                              <TableColumn fx:id="author1" prefWidth="128.0" text="Author" />
+                              <TableColumn fx:id="file" prefWidth="186.0" text="File" />
+                           </columns>
+                        </TableView>
+                        <Pane fx:id="paneView" layoutX="11.0" layoutY="374.0" prefHeight="183.0" prefWidth="695.0">
+                           <children>
+                              <Label layoutX="35.0" layoutY="14.0" text="id" />
+                              <Label layoutX="32.0" layoutY="73.0" text="type" />
+                              <Label layoutX="30.0" layoutY="124.0" text="author" />
+                              <TextField fx:id="idm" layoutX="81.0" layoutY="10.0" />
+                              <TextField fx:id="authorm" layoutX="81.0" layoutY="120.0" />
+                              <TextField fx:id="typem" layoutX="81.0" layoutY="65.0" />
+                              <Button fx:id="downloadFileBtn" layoutX="505.0" layoutY="55.0" mnemonicParsing="false" onAction="#downloadFile" text="DownLoad" />
+                              <Button fx:id="updateBtn" layoutX="332.0" layoutY="30.0" mnemonicParsing="false" onAction="#updateBtn" text="Update" />
+                              <Label fx:id="pathFile" layoutX="466.0" layoutY="132.0" prefHeight="0.0" prefWidth="160.0" />
+                              <Button fx:id="chooseFileBtn" layoutX="334.0" layoutY="107.0" mnemonicParsing="false" onAction="#selectFileBtn" text="Fichier" />
+                           </children>
+                        </Pane>
+                        <Button fx:id="modifierbtn" layoutX="517.0" layoutY="310.0" mnemonicParsing="false" onAction="#setUpdateBtn" text="Modifier" />
+                        <TextField fx:id="searchAuthorKeyPressed" layoutX="157.0" layoutY="58.0" onKeyReleased="#handelSearchKeyReleased" prefHeight="31.0" prefWidth="193.0" />
+                        <Label layoutX="28.0" layoutY="65.0" prefHeight="17.0" prefWidth="145.0" text="Recherche author" />
+                        <Button fx:id="supprimerbtn" layoutX="115.0" layoutY="310.0" mnemonicParsing="false" onAction="#deleteBtn" text="Supprimer" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

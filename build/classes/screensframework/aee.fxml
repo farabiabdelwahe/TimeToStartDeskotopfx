@@ -38,7 +38,6 @@
         <String fx:value="Art" />
 </value>
 </ChoiceBox>
-      <Button fx:id="Afficherseloncategorie" layoutX="300.0" layoutY="63.0" mnemonicParsing="false" onAction="#affichercategorie" text="Afficher" />
       <Button fx:id="edit" layoutX="112.0" layoutY="639.0" mnemonicParsing="false" onAction="#Edit" text="Modifier" />
       <Button fx:id="supprimerbut" layoutX="14.0" layoutY="639.0" mnemonicParsing="false" onAction="#Supprimersujet" text="Supprimer" />
       <Label fx:id="namemodif" layoutX="647.0" layoutY="263.0" prefHeight="17.0" prefWidth="47.0" text="Name" visible="false" />
@@ -60,7 +59,7 @@
       <Button fx:id="Validermodif" layoutX="704.0" layoutY="449.0" mnemonicParsing="false" onAction="#ValiderModif" prefHeight="36.0" prefWidth="72.0" text="Valider" visible="false" />
       <TextField fx:id="modifid" disable="true" layoutX="716.0" layoutY="202.0" prefHeight="25.0" prefWidth="150.0" visible="false" />
       <Label fx:id="namemodif1" layoutX="655.0" layoutY="206.0" prefHeight="17.0" prefWidth="41.0" text="id :" visible="false" />
-      <TableView fx:id="typecategorie" layoutX="23.0" layoutY="159.0" prefHeight="419.0" prefWidth="611.0">
+      <TableView fx:id="typecategorie" layoutX="23.0" layoutY="159.0" onMouseEntered="#affichercategorie" prefHeight="419.0" prefWidth="611.0">
         <columns>
           <TableColumn fx:id="idcolumn" prefWidth="35.0" text="Id" />
           <TableColumn fx:id="namecolumn" prefWidth="115.0" text="Name" />
@@ -73,6 +72,11 @@
       <ImageView fx:id="Micro" fitHeight="78.0" fitWidth="61.0" layoutX="799.0" layoutY="14.0" onMouseClicked="#MoliEar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@microphone-512.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="264.0" fitWidth="158.0" layoutX="691.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Topics.png" />
          </image>
       </ImageView>
    </children>

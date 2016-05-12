@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="773.0" prefWidth="866.0" styleClass="mainFxmlClass" stylesheets="@articleclient.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ArticleClientController">
+   <children>
+      <Pane layoutY="1.0" prefHeight="400.0" prefWidth="665.26171875" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <Label layoutX="287.0" layoutY="31.0" text="Recherche type" />
+            <Label layoutX="32.0" layoutY="28.0" prefHeight="17.0" prefWidth="145.0" text="Recherche author" />
+            <TextField fx:id="searchType1" layoutX="396.0" layoutY="28.0" prefHeight="31.0" prefWidth="119.0" />
+            <TextField fx:id="searchAuthorKeyPressed1" layoutX="145.0" layoutY="27.0" onKeyReleased="#handelSearchKeyReleased1" prefHeight="31.0" prefWidth="109.0" />
+            <Label layoutX="547.0" layoutY="34.0" prefHeight="17.0" prefWidth="108.0" text="recherche author" />
+            <TextField fx:id="searchAuthor1" layoutX="667.0" layoutY="30.0" prefHeight="31.0" prefWidth="128.0" />
+            <Button fx:id="searchBtn1" layoutX="231.0" layoutY="71.0" mnemonicParsing="false" onAction="#search1" prefHeight="34.0" prefWidth="376.0" text="Search" />
+            <Button fx:id="downloadFileBtn1" layoutX="523.0" layoutY="498.0" mnemonicParsing="false" onAction="#downloadFile1" prefHeight="45.0" prefWidth="208.0" text="DownLoad" />
+            <Button fx:id="printTableViewBtn1" layoutX="81.0" layoutY="498.0" mnemonicParsing="false" onAction="#print1" prefHeight="47.0" prefWidth="198.0" text="Imprimer" />
+            <TableView fx:id="tabArticle1" layoutX="19.0" layoutY="121.0" prefHeight="335.0" prefWidth="784.0">
+               <columns>
+                  <TableColumn fx:id="id1" prefWidth="57.0" text="Id" />
+                  <TableColumn fx:id="date1" minWidth="0.0" prefWidth="143.3333282470703" text="Date" />
+                  <TableColumn fx:id="type2" minWidth="0.0" prefWidth="115.66667175292969" text="Type" />
+                  <TableColumn fx:id="author2" prefWidth="188.66668701171875" text="Author" />
+                  <TableColumn fx:id="file1" prefWidth="239.33331298828125" text="File" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

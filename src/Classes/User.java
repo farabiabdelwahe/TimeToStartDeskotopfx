@@ -18,8 +18,8 @@ public class User {
    private int id ;
    private String username ;
     private String password ;
-    private String prenom ;
-   private String nom ;
+    private String firstname ;
+   private String lastname ;
   private String email;
     private java.sql.Date birthdate;
       private String country ;
@@ -35,13 +35,13 @@ public class User {
 
         public User(){}
         
-    public User(int id, String username,String email, String password, String prenom, String nom, java.sql.Date birthdate, String country, String qualification,int ban, List<Projet> projets, List<Feedback> feedbacks, List<Sponsoring> sponsorings) {
+    public User(int id, String username,String email, String password, String firstname, String lastname, java.sql.Date birthdate, String country, String qualification,int ban, List<Projet> projets, List<Feedback> feedbacks, List<Sponsoring> sponsorings) {
         this.id = id;
         this.username = username;
         this.email=email;
         this.password = password;
-        this.prenom = prenom;
-        this.nom = nom;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.birthdate = birthdate;
         
         this.country = country;
@@ -60,10 +60,10 @@ public class User {
         this.facebookid = facebookid;
     }
 
-    public User(String username,String nom, String prenom, String email) {
+    public User(String username,String lastname, String firstname, String email) {
 this.username=username;
-        this.nom=nom;
-this.prenom=prenom;
+        this.lastname=lastname;
+this.firstname=firstname;
 this.email=email;
     }
 
@@ -107,12 +107,12 @@ this.email=email;
         this.username = username;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
   
      
@@ -137,8 +137,8 @@ this.email=email;
         return id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getLastname() {
+        return lastname;
     }
 
      
@@ -166,8 +166,8 @@ this.email=email;
         this.id = id;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public void setPassword(String password) {
@@ -192,16 +192,16 @@ this.email=email;
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", prenom=" + prenom + ", nom=" + nom + ", email=" + email + ", birthdate=" + birthdate + ", country=" + country + ", qualification=" + qualification + ", ban=" + ban + ", fbid=" + fbid + ", projets=" + projets + ", feedbacks=" + feedbacks + ", sponsorings=" + sponsorings + '}';
+        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", birthdate=" + birthdate + ", country=" + country + ", qualification=" + qualification + ", ban=" + ban + ", fbid=" + fbid + ", projets=" + projets + ", feedbacks=" + feedbacks + ", sponsorings=" + sponsorings + '}';
     }
 
     
     
-    public User(String username,int id,String email, String nom, String password, java.sql.Date birthdate, List<Projet> projets, List<Feedback> feedbacks, List<Sponsoring> sponsorings) {
+    public User(String username,int id,String email, String lastname, String password, java.sql.Date birthdate, List<Projet> projets, List<Feedback> feedbacks, List<Sponsoring> sponsorings) {
        this.username=username;
         this.id = id;
         this.email=email;
-        this.nom = nom;
+        this.lastname = lastname;
         this.password = password;
         this.birthdate = birthdate;
         this.projets = projets;
@@ -209,17 +209,21 @@ this.email=email;
         this.sponsorings = sponsorings;
     }
 
-  public User(String username,String email, String nom, String password,String country,String prenom,String facebookid) {
+  public User(String username,String email, String lastname, String password,String country,String firstname,String facebookid) {
        this.username=username;
        this.facebookid=facebookid;
         this.email=email;
-        this.nom = nom;
+        this.lastname = lastname;
         
         this.password = password;
         this.country = country;
-        this.prenom = prenom;
+        this.firstname = firstname;
        
     }
+
+  
+
+  
 
   
    
