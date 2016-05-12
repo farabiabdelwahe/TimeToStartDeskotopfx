@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    
+  <children>
+      <TextField fx:id="modiftopicname" layoutX="100.0" layoutY="85.0" />
+      <TextArea id="content" fx:id="modiftopicontent" layoutX="100.0" layoutY="142.0" prefHeight="117.0" prefWidth="332.0" />
+      <Label layoutX="31.0" layoutY="89.0" prefHeight="17.0" prefWidth="59.0" text="Name" />
+      <Label layoutX="31.0" layoutY="294.0" prefHeight="17.0" prefWidth="104.0" text="Categorie" />
+      <Label layoutX="31.0" layoutY="142.0" text="Content" />
+      <Label layoutX="191.0" layoutY="29.0" prefHeight="17.0" prefWidth="184.0" text="Your  Topic" />
+      <ChoiceBox id="categoriesujet" fx:id="modiftopicategorie" layoutX="116.0" layoutY="290.0" prefWidth="150.0">
+            <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Art" />
+            <String fx:value="Social" />
+            <String fx:value="Technology" />
+            <String fx:value="Services" />
+            <String fx:value="Science" />
+        </FXCollections>     
+    </items>
+    <value>
+        <String fx:value="Art" />
+    </value>
+    
+</ChoiceBox>
+      <Label id="alertname" fx:id="alertname" disable="true" layoutX="439.0" layoutY="89.0" prefHeight="17.0" prefWidth="150.0" textFill="#f01111" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+      <Label id="alertcontent" fx:id="alertcontent" disable="true" layoutX="453.0" layoutY="192.0" prefHeight="17.0" prefWidth="129.0" textFill="#e10f0f" wrapText="true" />
+      <Button fx:id="Modify" layoutX="336.0" layoutY="352.0" mnemonicParsing="false" onAction="#Modifiertopic" text="Modifier" />
+        
+    
+   </children>
+
+</AnchorPane>

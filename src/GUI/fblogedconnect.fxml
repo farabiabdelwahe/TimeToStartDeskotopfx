@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" onMouseEntered="#fbonmouse" prefHeight="376.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.Screen1Controller">
+  <children>
+      <Button layoutX="264.0" layoutY="307.0" mnemonicParsing="false" onAction="#verfsavinguser" prefHeight="45.0" prefWidth="72.0" text="Save" />
+      <TextField fx:id="ffuser" layoutX="171.0" layoutY="121.0" />
+      <TextField fx:id="ffid" layoutX="171.0" layoutY="174.0" />
+      <Label layoutX="76.0" layoutY="128.0" text="Facebook User" />
+      <Label layoutX="74.0" layoutY="181.0" text="Facebook Id" />
+      <TextField fx:id="mailed" layoutX="174.0" layoutY="248.0" prefHeight="31.0" prefWidth="224.0" />
+      <Label fx:id="maillb" layoutX="73.0" layoutY="255.0" text="Facebook Email" />
+      <Pane layoutX="6.0" layoutY="5.0" prefHeight="31.0" prefWidth="582.0" style="-fx-background-color: #0886A9;" />
+   </children>
+     <stylesheets>
+    <URL value="@login.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.media.*?>
+
+<AnchorPane id="AnchorPane" fx:id="load" prefHeight="737.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screensframework.AeeController">
+   <children>
+      <Text blendMode="HARD_LIGHT" layoutX="229.0" layoutY="33.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="GERER LES SUJETS " wrappingWidth="141.13671875" />
+      <Text blendMode="HARD_LIGHT" layoutX="23.0" layoutY="80.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Per categorie" wrappingWidth="141.13671875" />
+      <Button fx:id="allerforum" layoutX="213.0" layoutY="639.0" mnemonicParsing="false" onAction="#gotocategorie" text="GO TO FORUM" />
+      <PointLight color="CHARTREUSE" lightOn="true" />
+      <ImageView fx:id="imgAjout" fitHeight="87.0" fitWidth="95.0" layoutX="606.0" layoutY="32.0" onMouseClicked="#Creerprojet" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="32.0">
+         <image>
+            <Image url="@imagesBAQ59JOL.png" />
+         </image></ImageView>
+      <Text blendMode="HARD_LIGHT" layoutX="498.0" layoutY="71.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout de Sujet:" wrappingWidth="87.0" />
+      <ChoiceBox id="categorieforum" fx:id="categorieforum" layoutX="125.0" layoutY="63.0" prefWidth="150.0">
+                <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Art" />
+            <String fx:value="Social" />
+            <String fx:value="Technology" />
+            <String fx:value="Services" />
+            <String fx:value="Science" />
+        </FXCollections>     
+    </items>
+<value>
+        <String fx:value="Art" />
+</value>
+</ChoiceBox>
+      <Button fx:id="Afficherseloncategorie" layoutX="300.0" layoutY="63.0" mnemonicParsing="false" onAction="#affichercategorie" text="Afficher" />
+      <Button fx:id="edit" layoutX="112.0" layoutY="639.0" mnemonicParsing="false" onAction="#Edit" text="Modifier" />
+      <Button fx:id="supprimerbut" layoutX="14.0" layoutY="639.0" mnemonicParsing="false" onAction="#Supprimersujet" text="Supprimer" />
+      <Label fx:id="namemodif" layoutX="647.0" layoutY="263.0" prefHeight="17.0" prefWidth="47.0" text="Name" visible="false" />
+      <Label fx:id="contentmodif" layoutX="647.0" layoutY="315.0" prefHeight="17.0" prefWidth="47.0" text="Content" visible="false" />
+      <TextField fx:id="modifcontent" layoutX="717.0" layoutY="311.0" visible="false" />
+      <TextField fx:id="modifname" layoutX="717.0" layoutY="259.0" visible="false" />
+      <ChoiceBox id="categorieforum" fx:id="modifcategorie" layoutX="717.0" layoutY="365.0" prefWidth="150.0" value="Art" visible="false">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Art" />
+               <String fx:value="Social" />
+               <String fx:value="Technology" />
+               <String fx:value="Services" />
+               <String fx:value="Science" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label fx:id="categorimodif" layoutX="647.0" layoutY="369.0" prefHeight="17.0" prefWidth="57.0" text="Categorie" visible="false" />
+      <Button fx:id="Validermodif" layoutX="704.0" layoutY="449.0" mnemonicParsing="false" onAction="#ValiderModif" prefHeight="36.0" prefWidth="72.0" text="Valider" visible="false" />
+      <TextField fx:id="modifid" disable="true" layoutX="716.0" layoutY="202.0" prefHeight="25.0" prefWidth="150.0" visible="false" />
+      <Label fx:id="namemodif1" layoutX="655.0" layoutY="206.0" prefHeight="17.0" prefWidth="41.0" text="id :" visible="false" />
+      <TableView fx:id="typecategorie" layoutX="23.0" layoutY="159.0" prefHeight="419.0" prefWidth="611.0">
+        <columns>
+          <TableColumn fx:id="idcolumn" prefWidth="35.0" text="Id" />
+          <TableColumn fx:id="namecolumn" prefWidth="115.0" text="Name" />
+            <TableColumn fx:id="contentcolumn" prefWidth="223.0" text="Content" />
+            <TableColumn fx:id="datecolumn" prefWidth="111.0" text="Date" />
+            <TableColumn fx:id="namecrcolumn" prefWidth="126.0" text="fondateur" />
+        </columns>
+      </TableView>
+      <Button fx:id="Vocalbut" layoutX="807.0" layoutY="107.0" mnemonicParsing="false" onAction="#MoliEar2" text="Vocal" />
+      <ImageView fx:id="Micro" fitHeight="78.0" fitWidth="61.0" layoutX="799.0" layoutY="14.0" onMouseClicked="#MoliEar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@microphone-512.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

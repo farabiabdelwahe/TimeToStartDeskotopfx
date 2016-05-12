@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="744.0" prefWidth="1340.0" styleClass="background" stylesheets="@me.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.Screen1Controller">
+  <children>
+    <AnchorPane id="anchorPane2" layoutX="4.0" layoutY="42.0" prefHeight="602.0" prefWidth="1400.0" styleClass="top-segment" AnchorPane.bottomAnchor="174.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0">
+      <children>
+        <VBox id="VBox" alignment="CENTER" prefHeight="300.0" prefWidth="421.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <Pane prefHeight="91.0" prefWidth="952.0" VBox.vgrow="NEVER">
+              <children>
+                        <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#RetrieveInformation" text="1:Retreive information" />
+                        <Button layoutX="191.0" layoutY="20.0" mnemonicParsing="false" onAction="#verfsavinguser" text="2:Save Info &amp; Connect" />
+              </children>
+            </Pane>
+            <VBox id="VBox" alignment="CENTER" prefHeight="326.0" prefWidth="952.0" spacing="5.0" VBox.vgrow="ALWAYS">
+              <children>
+                <AnchorPane id="AnchorPane" fx:id="ap" prefHeight="519.0" prefWidth="1494.0">
+                  <children>
+                    <WebView fx:id="wv" layoutY="-20.0" prefHeight="595.0" prefWidth="1328.0" style="" AnchorPane.bottomAnchor="-72.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-20.0" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </VBox>
+          </children>
+        </VBox>
+      </children>
+    </AnchorPane>
+    <Button id="button1" fx:id="btn" defaultButton="true" minHeight="37.0" onAction="#loadFbPage" prefHeight="52.0" prefWidth="841.0" text="Sign In" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="91.5" AnchorPane.rightAnchor="91.5" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="213.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDocumentController">
+   <children>
+      <Label layoutY="24.0" text="Sponsoring Discription :" />
+      <Label layoutY="98.0" prefHeight="17.0" prefWidth="115.0" text="  Sponsoring File" />
+      <Button layoutX="304.0" layoutY="94.0" mnemonicParsing="false" onAction="#download2" prefHeight="6.0" prefWidth="64.0" text="Dowload" />
+      <Label fx:id="splbl" layoutX="165.0" layoutY="7.0" onMouseEntered="#loadponinfo" prefHeight="51.0" prefWidth="209.0" />
+      <Label fx:id="spflbl" layoutX="115.0" layoutY="98.0" prefHeight="17.0" prefWidth="74.0" />
+   </children>
+</AnchorPane>

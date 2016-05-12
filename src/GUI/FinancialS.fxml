@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="666.0" prefWidth="1163.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDocumentController">
+   <children>
+      <Label layoutX="274.0" layoutY="27.0" prefHeight="17.0" prefWidth="475.0" text="          after authentification into DropBox please paste the Code below " />
+      <WebView fx:id="donate" fontScale="0.0" layoutX="-5.0" layoutY="94.0" onMouseEntered="#LoadWeb" prefHeight="574.0" prefWidth="1171.0" />
+      <TextField fx:id="dropass" layoutX="233.0" layoutY="58.0" prefHeight="25.0" prefWidth="526.0" />
+      <Button fx:id="dbb" layoutX="806.0" layoutY="58.0" mnemonicParsing="false" onAction="#getdropass" text="Send" />
+   </children>
+</AnchorPane>

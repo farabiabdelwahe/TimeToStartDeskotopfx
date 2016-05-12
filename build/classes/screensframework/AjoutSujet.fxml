@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screensframework.AeeController">
+   <children>
+      <TextField fx:id="newtopicname" layoutX="100.0" layoutY="85.0" />
+      <TextArea id="content" fx:id="newtopicontent" layoutX="100.0" layoutY="142.0" prefHeight="117.0" prefWidth="332.0" />
+      <Label layoutX="31.0" layoutY="89.0" prefHeight="17.0" prefWidth="59.0" text="Name" />
+      <Label layoutX="31.0" layoutY="294.0" prefHeight="17.0" prefWidth="104.0" text="Categorie" />
+      <Label layoutX="31.0" layoutY="142.0" text="Content" />
+      <Label layoutX="191.0" layoutY="29.0" prefHeight="17.0" prefWidth="184.0" text="Your New Topic" />
+      <Button layoutX="474.0" layoutY="303.0" mnemonicParsing="false" onAction="#Validerprojet" prefHeight="50.0" prefWidth="80.0" text="Confirm!" />
+      <ChoiceBox id="categoriesujet" fx:id="newtopicategorie" layoutX="116.0" layoutY="290.0" prefWidth="150.0">
+            <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Art" />
+            <String fx:value="Social" />
+            <String fx:value="Technology" />
+            <String fx:value="Services" />
+            <String fx:value="Science" />
+        </FXCollections>     
+    </items>
+    <value>
+        <String fx:value="Art" />
+    </value>
+    
+</ChoiceBox>
+      <Label id="alertname" fx:id="alertname" disable="true" layoutX="439.0" layoutY="89.0" prefHeight="17.0" prefWidth="150.0" textFill="#f01111" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+      <Label id="alertcontent" fx:id="alertcontent" disable="true" layoutX="453.0" layoutY="192.0" prefHeight="17.0" prefWidth="129.0" textFill="#e10f0f" wrapText="true" />
+      <Button fx:id="Resetprojet" layoutX="378.0" layoutY="304.0" mnemonicParsing="false" onAction="#Resetnewprojet" prefHeight="50.0" prefWidth="80.0" text="Reset" />
+      <ImageView fx:id="backimg" fitHeight="58.0" fitWidth="104.0" layoutX="9.0" layoutY="9.0" onMouseClicked="#returnmenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Crystal_128_back.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="help" fitHeight="117.0" fitWidth="140.0" layoutX="418.0" layoutY="9.0" onMouseClicked="#Fournirhelp" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ark-help.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

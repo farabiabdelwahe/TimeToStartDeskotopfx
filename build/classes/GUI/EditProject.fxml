@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" onMouseEntered="#setOnMouseEntered" prefHeight="567.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDocumentController">
+   <children>
+      <ChoiceBox fx:id="ecat" layoutX="123.0" layoutY="100.0" prefHeight="25.0" prefWidth="347.0" value="Art">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Art" />
+               <String fx:value="Social" />
+               <String fx:value="technology" />
+               <String fx:value="services" />
+               <String fx:value="science" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <TextArea fx:id="edis" layoutX="123.0" layoutY="147.0" prefHeight="91.0" prefWidth="347.0" />
+      <TextField fx:id="ename" layoutX="123.0" layoutY="55.0" prefHeight="25.0" prefWidth="347.0" />
+      <Label layoutX="20.0" layoutY="158.0" text="Project discription" />
+      <Label layoutX="24.0" layoutY="104.0" text="Project Category" />
+      <Label layoutX="24.0" layoutY="59.0" text="Project Name" />
+      <Button fx:id="ep" layoutX="8.0" layoutY="481.0" mnemonicParsing="false" onAction="#update" prefHeight="25.0" prefWidth="520.0" text="submit" />
+      <ImageView fitHeight="227.0" fitWidth="422.0" layoutX="82.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon/Startup-idea-building.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

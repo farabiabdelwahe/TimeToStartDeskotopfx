@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDocumentController">
+   <children>
+      <SplitPane dividerPositions="0.09154929577464789" layoutX="-3.0" prefHeight="800.0" prefWidth="1280.0" stylesheets="@me.css">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #96b946;;" stylesheets="@me.css">
+               <children>
+                  <AnchorPane layoutX="5.0" layoutY="3.0" onMouseEntered="#animate" onMouseExited="#animates" onMouseMoved="#animate" prefHeight="106.0" prefWidth="106.0">
+                     <children>
+                        <ImageView fx:id="icon1" fitHeight="58.0" fitWidth="56.0" layoutX="25.0" layoutY="14.0" onMouseClicked="#loadpr" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon/MS%20Office%202010%20-%20Project.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl1" layoutX="25.0" layoutY="83.0" prefHeight="17.0" prefWidth="56.0" styleClass="hoverlabel" text="  Project" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="5.0" layoutY="159.0" onMouseEntered="#animate1" onMouseExited="#animates" onMouseMoved="#animate1" prefHeight="106.0" prefWidth="106.0">
+                     <children>
+                        <Label fx:id="lbl2" layoutX="25.0" layoutY="87.0" prefHeight="5.0" prefWidth="56.0" styleClass="hoverlabel" text="   Users" visible="false" />
+                        <ImageView fx:id="icon2" fitHeight="56.0" fitWidth="62.0" layoutX="26.0" layoutY="16.0" onMouseClicked="#loaduser" onMouseEntered="#animate1" onMouseMoved="#animate1" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon/Users%20Edit%20user.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="5.0" layoutY="318.0" onMouseEntered="#animate2" onMouseExited="#animates" onMouseMoved="#animate2" prefHeight="106.0" prefWidth="106.0">
+                     <children>
+                        <Label fx:id="lbl3" layoutX="25.0" layoutY="75.0" prefHeight="17.0" prefWidth="56.0" styleClass="hvrl" text="   Forum" textFill="#171717" visible="false" />
+                        <ImageView fx:id="icon3" fitHeight="56.0" fitWidth="58.0" layoutX="25.0" layoutY="14.0" onMouseClicked="#loadforum" pickOnBounds="true" preserveRatio="true" styleClass="hoverlabel">
+                           <image>
+                              <Image url="@resources/icon/forum1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="5.0" layoutY="451.0" onMouseEntered="#animate4" onMouseExited="#animates" onMouseMoved="#animate4" prefHeight="106.0" prefWidth="106.0">
+                     <children>
+                        <ImageView fx:id="icon4" fitHeight="56.0" fitWidth="56.0" layoutX="24.0" layoutY="14.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon/logout-512.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl4" layoutX="24.0" layoutY="85.0" prefHeight="7.0" prefWidth="56.0" styleClass="hoverlabel" text="  Logout" textFill="#242525" visible="false" />
+                        <Button layoutX="26.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" prefHeight="63.0" prefWidth="49.0" text="Button" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="5.0" layoutY="616.0" onMouseEntered="#animate5" onMouseExited="#animates" onMouseMoved="#animate5" prefHeight="106.0" prefWidth="106.0">
+                     <children>
+                        <ImageView fx:id="icon5" fitHeight="58.0" fitWidth="56.0" layoutX="25.0" layoutY="14.0" onMouseClicked="#opentuto" pickOnBounds="true" preserveRatio="true" styleClass="hoverlabel">
+                           <image>
+                              <Image url="@resources/icon/article_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl5" layoutX="19.0" layoutY="89.0" prefHeight="17.0" prefWidth="62.0" styleClass="hoverlabel" text=" Tutorial" textFill="#1a1b1b" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="790.0" prefWidth="1252.0">
+               <children>
+                  <AnchorPane fx:id="mainp" layoutX="-5.0" prefHeight="800.0" prefWidth="1166.0" style="-fx-background-image: url(&quot;back1jpg&quot;); -fx-background-color: ;">
+                     <children>
+                        <ImageView fitHeight="699.0" fitWidth="1186.0" layoutX="-14.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@maxresdefault.jpg" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

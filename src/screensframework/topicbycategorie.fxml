@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="interf" onMouseEntered="#remplir" prefHeight="736.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screensframework.AeeController">
+   <children>
+      <TextField id="idmodif" fx:id="idmodifforum" disable="true" layoutX="138.0" layoutY="109.0" prefHeight="25.0" prefWidth="29.0" />
+      <TextField id="contentmodif" fx:id="contentmodifforum" layoutX="132.0" layoutY="182.0" prefHeight="63.0" prefWidth="254.0" />
+      <Button fx:id="butmodifforum" layoutX="121.0" layoutY="290.0" mnemonicParsing="false" onAction="#Modifiercommentaire" prefHeight="53.0" prefWidth="83.0" text="Button" />
+      <Label layoutX="14.0" layoutY="49.0" prefHeight="17.0" prefWidth="42.0" text="Name:" textFill="#da2020" />
+      <Label fx:id="nmtopic" layoutX="56.0" layoutY="49.0" prefHeight="17.0" prefWidth="130.0" />
+      <Label fx:id="cttopic" layoutX="250.0" layoutY="49.0" prefHeight="17.0" prefWidth="520.0" />
+      <Label fx:id="Content" layoutX="190.0" layoutY="49.0" prefHeight="17.0" prefWidth="83.0" text="Content:" textFill="#e40707" />
+      <Label fx:id="nmtopic111" layoutX="259.0" layoutY="40.0" prefHeight="17.0" prefWidth="346.0" />
+      <Label layoutX="14.0" layoutY="523.0" prefHeight="17.0" prefWidth="108.0" text="Ajout commentaire" />
+      <TextField fx:id="commentaire" layoutX="14.0" layoutY="567.0" prefHeight="63.0" prefWidth="393.0" />
+      <Button fx:id="butpost" layoutX="16.0" layoutY="658.0" mnemonicParsing="false" onAction="#postercom" prefHeight="45.0" prefWidth="97.0" text="Post" />
+      <Button fx:id="forumtoinit" layoutY="5.0" mnemonicParsing="false" onAction="#retourversinit" text="Back" />
+      <Button fx:id="supforum" layoutX="332.0" layoutY="525.0" mnemonicParsing="false" onAction="#Supprimercommentaire" prefHeight="31.0" prefWidth="108.0" text="Supprimer" />
+      <Button layoutX="448.0" layoutY="525.0" mnemonicParsing="false" onAction="#preparemodif" prefHeight="31.0" prefWidth="124.0" text="Editer" />
+      <Label fx:id="idlabelmodifforum" layoutX="35.0" layoutY="113.0" prefHeight="17.0" prefWidth="42.0" text="Id" textFill="#1e1d1d" />
+      <Label fx:id="contentlabelmodifforum" layoutX="21.0" layoutY="182.0" prefHeight="17.0" prefWidth="50.0" text="Content" textFill="#1e1d1d" />
+      <TableView fx:id="tableviewcomment" layoutX="15.0" layoutY="94.0" prefHeight="439.0" prefWidth="792.0">
+         <columns>
+            <TableColumn fx:id="forumusercolumn" prefWidth="137.0" text="Name User" />
+            <TableColumn fx:id="forumcommentcolumn" prefWidth="600.0" text="Commentaire" />
+            <TableColumn fx:id="forumidcolumn" prefWidth="75.0" text="id" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

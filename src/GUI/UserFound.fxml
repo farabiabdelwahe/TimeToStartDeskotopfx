@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="652.0" stylesheets="@me.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.Screen1Controller">
+   <children>
+      <Label layoutX="276.0" layoutY="6.0" text="User info" />
+      <Pane layoutX="5.0" layoutY="71.0" prefHeight="367.0" prefWidth="641.0" style="-fx-background-color: gray;">
+         <children>
+            <Pane layoutX="353.0" layoutY="20.0" prefHeight="236.0" prefWidth="224.0">
+               <children>
+                  <Label fx:id="emaillbl" layoutX="14.0" layoutY="187.0" prefHeight="17.0" prefWidth="91.0" />
+                  <Label fx:id="firstnameview" layoutX="141.0" layoutY="87.0" prefHeight="17.0" prefWidth="125.0" />
+                  <Label fx:id="emailview" layoutX="141.0" layoutY="187.0" prefHeight="17.0" prefWidth="125.0" />
+                  <Label fx:id="usernamelbl" layoutX="14.0" layoutY="39.0" prefHeight="17.0" prefWidth="91.0" />
+                  <Label fx:id="firstnamelbl" layoutX="14.0" layoutY="87.0" prefHeight="17.0" prefWidth="91.0" />
+                  <Label fx:id="lastnamelbl" layoutX="14.0" layoutY="137.0" prefHeight="17.0" prefWidth="91.0" />
+                  <Label fx:id="usernameview" layoutX="141.0" layoutY="39.0" prefHeight="17.0" prefWidth="125.0" />
+                  <Label fx:id="lastnameview" layoutX="141.0" layoutY="137.0" prefHeight="17.0" prefWidth="125.0" />
+               </children></Pane>
+            <Label layoutX="14.0" layoutY="11.0" text="Username" />
+            <Button layoutX="403.0" layoutY="311.0" mnemonicParsing="false" onAction="#searching" prefHeight="36.0" prefWidth="84.0" text="search" />
+            <TableView fx:id="tableid" layoutX="7.0" layoutY="46.0" onMouseClicked="#showit" prefHeight="317.0" prefWidth="346.0">
+              <columns>
+                <TableColumn fx:id="nome" prefWidth="165.0" text="Nom" />
+                <TableColumn fx:id="prenome" prefWidth="180.0" text="Prenom" />
+              </columns>
+            </TableView>
+            <TextField fx:id="usernamef" layoutX="81.0" layoutY="4.0" />
+            <Button layoutX="558.0" layoutY="311.0" mnemonicParsing="false" onAction="#maine" text="Back " />
+            <Button layoutX="525.0" layoutY="10.0" mnemonicParsing="false" onAction="#sendmail" prefHeight="31.0" prefWidth="108.0" text="Mail him" />
+         </children></Pane>
+      <Pane layoutX="5.0" layoutY="30.0" prefHeight="31.0" prefWidth="635.0" style="-fx-background-color: #ace600;" />
+   </children>
+</AnchorPane>
