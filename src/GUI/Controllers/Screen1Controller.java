@@ -945,10 +945,20 @@ tableid.getItems().setAll(fe.findAllbyuser(usernamef.getText()));
       
         
          if (us!=null){
+<<<<<<< HEAD
    
       
          savedusers.savedlogedin=us;
       
+=======
+         System.out.println("existe toul");
+      
+         savedusers.savedlogedin=us;
+             System.out.println("tsajel hal maset -----?");
+             System.out.println(savedusers.savedlogedin.getLastname());
+             System.out.println(savedusers.savedlogedin.getLastname());
+              System.out.println(Facebookuser.fbu.getFbid());
+>>>>>>> origin/master
 //              urez=fe.fbusers(u.getLastname(),u.getFbid());
 //     Facebookuser.fbusav=urez;
      
@@ -964,7 +974,11 @@ tableid.getItems().setAll(fe.findAllbyuser(usernamef.getText()));
    
          
  
+<<<<<<< HEAD
        
+=======
+           System.out.println(" mana3erfouch famchy inserer");
+>>>>>>> origin/master
 //      savedusers.savedlogedin=u;
       fe.CreerCompte(naw);
        savedusers.savedlogedin=naw;
