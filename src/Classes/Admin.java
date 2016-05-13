@@ -12,8 +12,8 @@ package Classes;
 public class Admin {
 
         private String id ;
-  // private String password ;
-   private String name ;
+ private String password ;
+ //  private String name ;
    
     public String getId() {
         return id;
