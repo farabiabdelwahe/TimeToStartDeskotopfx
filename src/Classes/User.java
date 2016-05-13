@@ -30,7 +30,7 @@ public class User {
       List<Feedback> feedbacks;
         List<Sponsoring> sponsorings;
         private String facebookid ;
-        
+        private String roles;
     
 
         public User(){}
@@ -54,6 +54,14 @@ public class User {
 
     public String getFacebookid() {
         return facebookid;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
 
     public void setFacebookid(String facebookid) {

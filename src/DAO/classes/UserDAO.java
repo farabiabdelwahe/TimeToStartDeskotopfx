@@ -154,9 +154,9 @@ encodedSalt=encodedSalt.substring(0,31);
             System.out.println("ddddddddddddddddddddddddd"+val.getPassword());
  pwd= hashPassword(val.getPassword(),encodedSalt);
                System.out.println("tryyyyyyyyyy"+val.getPassword());
-             String requete = "INSERT INTO fos_user(username,username_canonical,email,email_canonical,enabled,salt,locked,expired,credentials_expired,password,firstname,country,birthdate,facebookid) "
+             String requete = "INSERT INTO fos_user(username,username_canonical,email,email_canonical,enabled,salt,locked,expired,credentials_expired,password,roles,firstname,country,birthdate,facebookid) "
                      + ""
-                    + "VALUES('"+val.getUsername()+"', '"+val.getUsername()+"','"+val.getEmail()+"','"+val.getEmail()+"','"+en+"','"+encodedSalt+"','"+lock+"','"+lock+"','"+lock+"','"+pwd+"','"+val.getFirstname()+"', '"+val.getCountry()+"', '"+val.getBirthdate()+"', '"+Facebookuser.fbu.getFbid()+"')";
+                    + "VALUES('"+val.getUsername()+"', '"+val.getUsername()+"','"+val.getEmail()+"','"+val.getEmail()+"','"+en+"','"+encodedSalt+"','"+lock+"','"+lock+"','"+lock+"','"+pwd+"','"+val.getRoles()+"','"+val.getFirstname()+"', '"+val.getCountry()+"', '"+val.getBirthdate()+"', '"+Facebookuser.fbu.getFbid()+"')";
              PreparedStatement ps = connection.prepareStatement(requete);
             ps.executeUpdate();
             System.out.println("ddddddddddddddddddddddddd"+val.getPassword());
@@ -230,9 +230,9 @@ encodedSalt=encodedSalt.substring(0,31);
             System.out.println("ddddddddddddddddddddddddd"+val.getPassword());
  pwd= hashPassword(val.getPassword(),encodedSalt);
                System.out.println("tryyyyyyyyyy"+val.getPassword());
-             String requete = "INSERT INTO fos_user(username,username_canonical,email,email_canonical,enabled,salt,locked,expired,credentials_expired,password,firstname,country,birthdate,qualification) "
+             String requete = "INSERT INTO fos_user(username,username_canonical,email,email_canonical,enabled,salt,locked,expired,credentials_expired,password,roles,firstname,country,birthdate,qualification) "
                      + ""
-                    + "VALUES('"+val.getUsername()+"', '"+val.getUsername()+"','"+val.getEmail()+"','"+val.getEmail()+"','"+en+"','"+encodedSalt+"','"+lock+"','"+lock+"','"+lock+"','"+pwd+"','"+val.getFirstname()+"', '"+val.getCountry()+"', '"+val.getBirthdate()+"', '"+val.getQualification()+"')";
+                    + "VALUES('"+val.getUsername()+"', '"+val.getUsername()+"','"+val.getEmail()+"','"+val.getEmail()+"','"+en+"','"+encodedSalt+"','"+lock+"','"+lock+"','"+lock+"','"+pwd+"','"+val.getRoles()+"','"+val.getFirstname()+"', '"+val.getCountry()+"', '"+val.getBirthdate()+"', '"+val.getQualification()+"')";
              PreparedStatement ps = connection.prepareStatement(requete);
             ps.executeUpdate();
             System.out.println("ddddddddddddddddddddddddd"+val.getPassword());
@@ -506,6 +506,7 @@ public User Connecter(String username) throws SQLException {
         us.setFirstname(rs2.getString("firstname"));
         us.setLastname(rs2.getString("lastname"));
         us.setEmail(rs2.getString("email"));
+          us.setRoles(rs2.getString("roles"));
         us.setBirthdate(rs2.getDate("Birthdate"));
         
         

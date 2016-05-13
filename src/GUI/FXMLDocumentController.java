@@ -18,23 +18,15 @@ import GUI.Translators.FeedBackt;
 import GUI.Translators.Sponsorint;
 import com.dropbox.core.DbxException;
 import java.awt.Desktop;
-import java.awt.Desktop.Action;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.Instant;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -45,10 +37,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -58,7 +47,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -70,29 +58,17 @@ import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
-import static jdk.nashorn.internal.runtime.Debug.id;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.stage.Modality;
-
-import javax.swing.AbstractAction;
 
 
 
@@ -245,7 +221,7 @@ public class FXMLDocumentController implements Initializable,Runnable {
        
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
-        System.out.println("You clicked me!");
+      
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("FXML.fxml"));
         Scene home_page_scene = new Scene(home_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -310,7 +286,7 @@ public class FXMLDocumentController implements Initializable,Runnable {
         @FXML
              private void logout(javafx.scene.input.MouseEvent g) throws IOException {
    try {                    
-   System.out.println("You clicked me!");
+  
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
         Scene home_page_scene = new Scene(home_page_parent);
         Stage app_stage = (Stage) ((Node) g.getSource()).getScene().getWindow();
@@ -355,7 +331,7 @@ public class FXMLDocumentController implements Initializable,Runnable {
 @FXML protected void add(ActionEvent event) throws IOException, DbxException, URISyntaxException, SQLException {
 
 try {
-    System.out.println("*********************************"+savedusers.savedlogedin.getId());
+    
          tlabel.setText("Processing your request");
     Projet p = new Projet() ;
 
@@ -370,7 +346,7 @@ try {
       
       p.setName(name.getText());
       p.setDiscription(dis.getText());
-     System.out.println(p.getDiscription());
+   
       p.setType((String)cat.getValue());
       p.setHelpType(helpType.getValue().toString());
           if (helpType.getValue().toString().equals("")){
@@ -514,7 +490,7 @@ cats.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<S
 
     @Override
     public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-          System.out.println((String)cats.getValue());//To change body of generated methods, choose Tools | Templates.
+        //To change body of generated methods, choose Tools | Templates.
            projectnames.setCellValueFactory(new PropertyValueFactory<Projet, String>("name"));
        projectdiscriptons.setCellValueFactory(new PropertyValueFactory<Projet, String>("Discription"));
    
@@ -611,7 +587,7 @@ Optional<ButtonType> result = alert.showAndWait();
      
 if (result.get() == ButtonType.OK){
       for (Object o1: selectedItems){
-          System.out.println(((Projet)(o1)).toString());
+     
            Projet p1=(Projet)(o1);
      o.SupprimeProjet(p1);
       }
@@ -630,7 +606,7 @@ if (result.get() == ButtonType.OK){
        Projet p = SelectedValue.p;
        p.setDiscription(edis.getText());
        p.setName(ename.getText());
-           System.out.println("zfqdfsfz"+p.getId());
+         
        p.setType((String)ecat.getValue());
        o.update(p);
        SelectedValue.p=o.findProjectbyname(ename.getText());
@@ -656,7 +632,7 @@ if (result.get() == ButtonType.OK){
 
        projetTables1.getItems().setAll(o.findAllbyname(search.getText()));
        for (Projet p : o.findAllbyname(search.getText())){
-           System.out.println(p);
+      
            
        }
 
@@ -664,7 +640,7 @@ if (result.get() == ButtonType.OK){
     }
     
     catch ( Exception e){
-        System.out.println(e.getMessage());
+    
     }
    
  
@@ -677,17 +653,16 @@ if (result.get() == ButtonType.OK){
       ObservableList selectedItems = projetTable.getSelectionModel().getSelectedItems();
    Projet p1=null;
       for (Object o1: selectedItems){
-          System.out.println(((Projet)(o1)).toString());
+          
          p1=(Projet)(o1);
            
           sp=p1;
-          
-          System.out.println(sp);
+     
         
 break;
     
       }
-       System.out.println(sp);
+      
        SelectedValue.p=sp;
        SelectedValue.pc=null;
       return p1;
@@ -977,12 +952,12 @@ rating.setText(p.getRating().toString());
       ObservableList selectedItems = projetTables.getSelectionModel().getSelectedItems();
    Projet p1=null;
       for (Object o1: selectedItems){
-          System.out.println(((Projet)(o1)).toString());
+       
          p1=(Projet)(o1);
            
           sp=p1;
           
-          System.out.println(sp);
+          
         
 break;
     
@@ -1009,12 +984,12 @@ break;
       ObservableList selectedItems = projetTables1.getSelectionModel().getSelectedItems();
    Projet p1=null;
       for (Object o1: selectedItems){
-          System.out.println(((Projet)(o1)).toString());
+          
          p1=(Projet)(o1);
            
           sp=p1;
           
-          System.out.println(sp);
+          
         
 break;
     
@@ -1043,11 +1018,11 @@ break;
 Sponsorint s =  null;
       SponsoringDAO s1= new SponsoringDAO() ;
       for (Object o1: selectedItems){
-          System.out.println(((Sponsorint)(o1)).toString());
+    
         s=(Sponsorint)(o1);
            
         SelectedValue.selectedsponsoring=s1.findSponsbyid(s.getId());
-        System.out.println(SelectedValue.selectedsponsoring+"aaaaaaaazdfvqv");
+        
 break;
     
       }
@@ -1567,7 +1542,7 @@ rslide.setValue(2);
          
                 @FXML protected void submitrating(ActionEvent event)   {
              
-System.out.println(Math.round(rslide.getValue()));
+
 o.rate(SelectedValue.pc.getId(), (int) Math.round(rslide.getValue()));
 rslide.setVisible(false);
              submitrating.setVisible(false);

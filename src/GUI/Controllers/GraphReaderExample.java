@@ -70,13 +70,10 @@ public class GraphReaderExample {
        u.setFbid(user.getId());
           Facebookuser.fbu=u;
       
-       System.out.println("Facebook User Name : "+Facebookuser.fbu.getLastname());
-        System.out.println("Facebook Id : "+Facebookuser.fbu.getFbid());
-        System.out.println("Facebook Birthday : "+Facebookuser.fbu.getBirthdate());
-        System.out.println("Facebook Email : "+Facebookuser.fbu.getEmail());
+      
    
         mdao.AjouterMembre(user.getName(),Integer.parseInt(user.getId()));
-        System.out.println("test");
+   
         
         
     }

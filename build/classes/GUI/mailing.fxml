@@ -29,7 +29,6 @@
       <TextField fx:id="gsujet" layoutX="135.0" layoutY="105.0" prefHeight="31.0" prefWidth="255.0" />
       <TextArea fx:id="gtxt" layoutX="104.0" layoutY="241.0" prefHeight="226.0" prefWidth="315.0" />
       <Button layoutX="449.0" layoutY="294.0" mnemonicParsing="false" onAction="#sentmail" prefHeight="26.0" prefWidth="68.0" text="Send" />
-      <Button layoutX="449.0" layoutY="360.0" mnemonicParsing="false" onAction="#maine" prefHeight="26.0" prefWidth="68.0" text="Cancel" />
       <Label layoutX="40.0" layoutY="160.0" text="Sender" />
       <Label layoutX="36.0" layoutY="208.0" text="Email Password" />
       <TextField fx:id="sendermail" disable="true" layoutX="135.0" layoutY="153.0" prefHeight="31.0" prefWidth="255.0" />

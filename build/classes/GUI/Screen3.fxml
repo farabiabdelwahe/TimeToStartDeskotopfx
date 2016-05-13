@@ -68,14 +68,14 @@
       <TextField id="lastname" fx:id="lastname" layoutX="152.0" layoutY="207.0" />
       <TextField id="firstname" fx:id="firstname" layoutX="152.0" layoutY="159.0" />
       <Label layoutX="23.0" layoutY="71.0" text="UserName" textFill="#158fab" />
-      <Label layoutX="22.0" layoutY="163.0" text="Prenom" textFill="#158fab" />
-      <Label layoutX="19.0" layoutY="250.0" text="Date de Naissace" textFill="#158fab" />
-      <Label layoutX="20.0" layoutY="296.0" text="Pays" textFill="#158fab" />
-      <Label layoutX="23.0" layoutY="121.0" text="Mot de Passe" textFill="#158fab" />
-      <Label layoutX="23.0" layoutY="211.0" text="Nom" textFill="#158fab" />
-      <Label layoutX="18.0" layoutY="342.0" text="Description Qualification" textFill="#138fab" />
+      <Label layoutX="22.0" layoutY="163.0" text="Firstname" textFill="#158fab" />
+      <Label layoutX="19.0" layoutY="250.0" text="Birthdate" textFill="#158fab" />
+      <Label layoutX="20.0" layoutY="296.0" text="Country" textFill="#158fab" />
+      <Label layoutX="23.0" layoutY="121.0" text="Password" textFill="#158fab" />
+      <Label layoutX="23.0" layoutY="211.0" text="LastName" textFill="#158fab" />
+      <Label layoutX="18.0" layoutY="342.0" text="Qualification" textFill="#138fab" />
       <TextField id="qualification" fx:id="qualification" layoutX="152.0" layoutY="338.0" />
-      <Button layoutX="312.0" layoutY="437.0" onAction="#goToScreen2" text="Valider" textFill="#e12525" />
+      <Button layoutX="312.0" layoutY="437.0" onAction="#goToScreen2" text="Create Account" textFill="#e12525" />
       
       <TextField id="country" fx:id="country" layoutX="152.0" layoutY="292.0" />
    
